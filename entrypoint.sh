@@ -56,7 +56,7 @@ cat <<-EOF > /v2raybin/v2ray-$V_VER-linux-$SYS_Bit/config.json
     "log":{
         "loglevel":"warning"
     },
-    "inbound":{
+    "inbounds":{
         "protocol":"vmess",
         "listen":"127.0.0.1",
         "port":2333,
@@ -76,7 +76,7 @@ cat <<-EOF > /v2raybin/v2ray-$V_VER-linux-$SYS_Bit/config.json
             }
         }
     },
-    "outbound":{
+    "outbounds":{
         "protocol":"freedom",
         "settings":{
         }
