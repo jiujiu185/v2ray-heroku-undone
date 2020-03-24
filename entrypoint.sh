@@ -34,7 +34,7 @@ cd /v2raybin
 wget --no-check-certificate -qO 'v2ray.zip' "https://github.com/v2ray/v2ray-core/releases/download/$V_VER/v2ray-linux-$SYS_Bit.zip"
 unzip v2ray.zip -d v2ray-$V_VER-linux-$SYS_Bit
 rm -rf v2ray.zip
-chmod +x /v2raybin/v2ray-$V_VER-linux-$SYS_Bit/*
+chmod +x /v2raybin/v2ray-$V_VER-linux-$SYS_Bit/v2ray
 
 C_VER=`wget -qO- "https://api.github.com/repos/mholt/caddy/releases/latest" | grep 'tag_name' | cut -d\" -f4`
 mkdir /caddybin
@@ -50,6 +50,7 @@ cd /wwwroot
 wget --no-check-certificate -qO 'demo.tar.gz' "https://github.com/jiujiu185/v2ray-heroku-undone/raw/master/demo.tar.gz"
 tar xvf demo.tar.gz
 rm -rf demo.tar.gz
+rm -rf favicon.ico
 
 cat <<-EOF > /v2raybin/v2ray-$V_VER-linux-$SYS_Bit/config.json
 {
