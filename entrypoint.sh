@@ -5,7 +5,7 @@ if [[ -z "${UUID}" ]]; then
   UUID="4890bd47-5180-4b1c-9a5d-3ef686543112"
 fi
 
-if [[ -z "$VER" ]]; then
+if [[ -z "${VER}" ]]; then
   VER="v4.22.1"
 fi
 
@@ -32,7 +32,7 @@ SYS_Bit="$(getconf LONG_BIT)"
 if [ "$VER" = "latest" ]; then
   V_VER=`wget -qO- "https://api.github.com/repos/v2ray/v2ray-core/releases/latest" | grep 'tag_name' | cut -d\" -f4`
 else
-  V_VER="v$VER"
+  V_VER="$VER"
 fi
 C_VER=`wget -qO- "https://api.github.com/repos/mholt/caddy/releases/latest" | grep 'tag_name' | cut -d\" -f4`
 
