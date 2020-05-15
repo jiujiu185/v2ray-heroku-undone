@@ -35,7 +35,7 @@ else
   V_VER="$VER"
 fi
 #C_VER=`wget -qO- "https://api.github.com/repos/mholt/caddy/releases/latest" | grep 'tag_name' | cut -d\" -f4`
-C_VER="2.0.0"
+C_VER="v1.0.4"
 
 mkdir /v2raybin
 cd /v2raybin
@@ -46,7 +46,7 @@ chmod +x /v2raybin/v2ray-linux
 
 mkdir /caddybin
 cd /caddybin
-wget --no-check-certificate -qO 'caddy.tar.gz' "https://github.com/caddyserver/caddy/releases/download/v$C_VER/caddy_$C_VER$BitVer"
+wget --no-check-certificate -qO 'caddy.tar.gz' "https://github.com/caddyserver/caddy/releases/download/$C_VER/caddy_$C_VER$BitVer"
 tar xvf caddy.tar.gz
 rm -rf caddy.tar.gz
 chmod +x caddy
@@ -108,10 +108,10 @@ EOF
 cd /v2raybin/v2ray-linux
 ./v2ray &
 cd /caddybin
-./caddy start --config="Caddyfile"
+./caddy -conf="Caddyfile"
 else
 cd /v2raybin/v2ray-linux
 ./v2ray &
 cd /caddybin
-./caddy start --config="Caddyfile"
+./caddy -conf="Caddyfile"
 fi
