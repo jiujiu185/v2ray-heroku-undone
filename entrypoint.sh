@@ -108,10 +108,10 @@ EOF
 cd /v2raybin/v2ray-linux
 ./v2ray &
 cd /caddybin
-./caddy -conf="Caddyfile"
+./caddy start --config="Caddyfile"
 else
 cd /v2raybin/v2ray-linux
 ./v2ray &
 cd /caddybin
-./caddy -conf="Caddyfile"
+./caddy start --config="Caddyfile"
 fi
